@@ -35,7 +35,7 @@ navLinks.forEach(navLinks => navLinks.addEventListener('mouseleave', function ()
     navLinks.style.fontSize = '1.6rem';
 }));
 
-// Attempt to change header back after nav changes
+// 6. Change nav colors to match header
 header.addEventListener('mouseleave', function () {
     header.style.background = 'white';
 });
@@ -44,7 +44,7 @@ header.addEventListener('mouseleave', function () {
     navLinks.forEach(item => item.style.background = header.style.background);
 });
 
-// 6. Turn background a random color on keydown
+// 7. Turn background a random color on keydown
 function getRandomColor() {
     let letters = '0123456789ABCDEF';
     let color = '#';
@@ -59,13 +59,18 @@ body.addEventListener('keydown', function () {
     body.style.background = getRandomColor();
 });
 
-// 7. Change picture on click
+// 8. Change picture on click
 const mainImg = document.querySelector('.intro img');
 mainImg.addEventListener('click', function () {
     mainImg.setAttribute('src', 'img/denis-bayer-97398-unsplash.jpg');
 });
 
-// 8. Stop the navigation items from refreshing the page by using preventDefault()
+// 9. Change it back
+mainImg.addEventListener('dblclick', function () {
+    mainImg.setAttribute('src', 'img/fun-bus.jpg');
+});
+
+// 10. Stop the navigation items from refreshing the page by using preventDefault()
 navLinks.forEach(navLinks => function() {
     navLinks.addEventListner('click',navLinks => {
     navLinks.preventDefault();
