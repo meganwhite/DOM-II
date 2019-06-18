@@ -20,7 +20,7 @@ header.addEventListener('mouseout', function () {
 // 4. Change background to gray and bold font of navlinks on mouseover
 const navLinks = document.querySelectorAll('.nav-link');
 header.addEventListener('mouseenter', function () {
-    navLinks.style.background = '#ffcc00';
+    navLinks.forEach(navLinks => navLinks.style.background = '#ffcc00')
 });
 navLinks.forEach(navLinks => navLinks.addEventListener('mouseenter', function () {
     navLinks.style.background = '#cccccc';
@@ -65,9 +65,9 @@ mainImg.addEventListener('click', function () {
     mainImg.setAttribute('src', 'img/denis-bayer-97398-unsplash.jpg');
 });
 
-// 8. Stop the navigation from items from refreshing the page by using preventDefault()
-navLinks.forEach(item => function() {
-    addEventListner('click',item => {
-    item.preventDefault();
+// 8. Stop the navigation items from refreshing the page by using preventDefault()
+navLinks.forEach(navLinks => function() {
+    navLinks.addEventListner('click',navLinks => {
+    navLinks.preventDefault();
     });
 });
